@@ -11,41 +11,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 >
   <PageHero
     variant="feature"
-    eyebrow="Sitio informativo"
-    title="Campaña de alfabetización contra la violencia contra el hombre"
-    description="La investigación se justifica en la necesidad de visibilizar, informar y concientizar sobre la violencia ejercida contra el hombre dentro del contexto legal, promoviendo una visión más inclusiva y equitativa del derecho y favoreciendo el acceso a la justicia."
-    primaryHref="/proyecto"
-    primaryLabel="Ver datos del proyecto"
+    eyebrow="Orientación inicial"
+    title="Información jurídica clara sobre violencia intrafamiliar contra hombres en Nicaragua"
+    description="Sitio dirigido a personas afectadas, estudiantes, público general y quienes buscan una orientación inicial sobre derechos, barreras de denuncia y rutas de apoyo dentro del marco jurídico nicaragüense."
+    primaryHref="/problematica"
+    primaryLabel="Conocer la problemática"
     secondaryHref="/solucion"
-    secondaryLabel="Revisar la solución"
+    secondaryLabel="Ver rutas de apoyo"
+    highlights={["Enfoque académico", "Marco jurídico", "Orientación accesible"]}
   >
-    <div class="stack-md">
-      <span class="pill">Navegación principal</span>
-      <h2 class="hero-panel-title">Mapa del contenido</h2>
-      <ul class="quick-nav">
+    <div class="stack-md hero-site-summary">
+      <span class="pill">Dirigido a personas afectadas y público general</span>
+      <h2 class="hero-panel-title">Qué encontrarás en este sitio</h2>
+      <p class="hero-panel-intro">
+        Una lectura guiada para comprender el problema, ubicar el marco jurídico aplicable y reconocer rutas
+        iniciales de orientación.
+      </p>
+      <ul class="hero-support-list">
         <li>
-          <a href="/proyecto">
-            <span>Proyecto e identificación</span>
-            <span>Contexto</span>
-          </a>
+          <strong>Contexto y análisis</strong>
+          Explicación clara de la problemática y de las barreras sociales e institucionales que la rodean.
         </li>
         <li>
-          <a href="/problematica">
-            <span>Problemática y análisis</span>
-            <span>Análisis</span>
-          </a>
+          <strong>Orientación jurídica</strong>
+          Resumen accesible sobre igualdad ante la ley, debido proceso y normas aplicables.
         </li>
         <li>
-          <a href="/solucion">
-            <span>Solución y orientación</span>
-            <span>Respuesta</span>
-          </a>
-        </li>
-        <li>
-          <a href="/referencias">
-            <span>Referencias normativas</span>
-            <span>Normas</span>
-          </a>
+          <strong>Rutas de apoyo</strong>
+          Referencias a instituciones y pasos básicos para orientar la denuncia y la búsqueda de protección.
         </li>
       </ul>
     </div>
@@ -187,5 +180,76 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .hero-panel-title {
     margin: 0;
     font-size: 1.35rem;
+  }
+
+  .hero-site-summary {
+    position: relative;
+    gap: 0.9rem;
+  }
+
+  .hero-site-summary::before {
+    content: "";
+    width: 3.25rem;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  }
+
+  .hero-support-list {
+    display: grid;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hero-panel-intro {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .hero-support-list li {
+    position: relative;
+    padding: 0.95rem 1rem;
+    padding-left: 1.15rem;
+    border-radius: 16px;
+    border: 1px solid rgba(22, 37, 58, 0.1);
+    background: rgba(255, 255, 255, 0.74);
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .hero-support-list li::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    border-radius: 16px 0 0 16px;
+    background: linear-gradient(180deg, var(--accent), rgba(22, 37, 58, 0.22));
+  }
+
+  .hero-support-list strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--accent-strong);
+  }
+
+  @media (max-width: 759px) {
+    .hero-panel-title {
+      font-size: 1.2rem;
+    }
+
+    .hero-site-summary::before {
+      width: 2.6rem;
+    }
+
+    .hero-support-list {
+      gap: 0.7rem;
+    }
+
+    .hero-support-list li {
+      padding: 0.8rem 0.9rem;
+    }
   }
 </style>

@@ -7,6 +7,7 @@ interface Props {
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  highlights?: string[];
   variant?: "feature" | "section";
 }
 
@@ -18,6 +19,7 @@ const {
   primaryLabel,
   secondaryHref,
   secondaryLabel,
+  highlights = [],
   variant = "feature",
 } = Astro.props;
 
@@ -48,6 +50,14 @@ if (hasAside) classes.push("has-aside");
             {secondaryLabel}
           </a>
         )}
+      </div>
+    )}
+
+    {highlights.length > 0 && (
+      <div class="hero-highlights" aria-label="Aspectos destacados">
+        {highlights.map((item) => (
+          <span class="hero-highlight">{item}</span>
+        ))}
       </div>
     )}
   </div>
@@ -95,7 +105,8 @@ if (hasAside) classes.push("has-aside");
   }
 
   .page-hero-feature .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    font-size: clamp(2.2rem, 4.8vw, 4rem);
+    max-width: 20ch;
   }
 
   .page-hero-feature .hero-copy::after {
@@ -125,9 +136,121 @@ if (hasAside) classes.push("has-aside");
     border-radius: var(--radius-sm);
   }
 
+  .hero-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .hero-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(22, 37, 58, 0.12);
+    background: rgba(22, 37, 58, 0.03);
+    color: var(--accent-strong);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .hero-highlight::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+
   @media (min-width: 760px) {
     .page-hero-feature.has-aside {
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .page-hero-feature .hero-copy,
+    .page-hero-feature .hero-side {
+      padding: clamp(1.15rem, 2vw, 1.7rem);
+    }
+
+    .page-hero-feature .hero-copy-content {
+      max-width: 40rem;
+    }
+
+    .page-hero-feature .hero-description {
+      max-width: 36rem;
+    }
+  }
+
+  @media (max-width: 759px) {
+    .page-hero-feature .hero-copy,
+    .page-hero-feature .hero-side {
+      padding: 1rem;
+    }
+
+    .page-hero-feature {
+      gap: 0.75rem;
+    }
+
+    .page-hero-feature .hero-title {
+      font-size: clamp(2rem, 10vw, 2.8rem);
+    }
+
+    .page-hero-feature .hero-description {
+      max-width: none;
+    }
+
+    .page-hero-feature .hero-copy::after {
+      width: min(7rem, 28%);
+      height: 3px;
+    }
+
+    .page-hero-feature .action-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .page-hero-feature .action-row .button {
+      width: 100%;
+    }
+
+    .page-hero-feature .hero-side {
+      border-radius: var(--radius-sm);
+    }
+
+    .hero-highlights {
+      gap: 0.55rem;
+    }
+
+    .hero-highlight {
+      font-size: 0.86rem;
+      padding: 0.45rem 0.72rem;
+    }
+
+    .page-hero-section {
+      gap: 0.75rem;
+    }
+
+    .page-hero-section .hero-copy,
+    .page-hero-section .hero-side {
+      padding: 0.9rem;
+    }
+
+    .page-hero-section .hero-title {
+      font-size: clamp(1.75rem, 8vw, 2.25rem);
+    }
+
+    .page-hero-section .hero-description {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      max-width: none;
+    }
+
+    .page-hero-section .hero-side {
+      margin-top: 0;
+      border-radius: 14px;
     }
   }
 </style>
