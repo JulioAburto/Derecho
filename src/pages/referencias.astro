@@ -1,0 +1,77 @@
+---
+import ContentCard from "../components/ContentCard.astro";
+import PageHero from "../components/PageHero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Referencias"
+  description="Referencias normativas e institucionales relacionadas con el proyecto."
+  active="referencias"
+>
+  <PageHero
+    variant="section"
+    eyebrow="Marco normativo"
+    title="Referencias normativas e institucionales"
+    description="Esta sección reúne las normas y las instituciones que sostienen el análisis del proyecto y orientan las rutas de protección y denuncia desarrolladas en el sitio."
+  >
+    <div class="stack-md">
+      <span class="pill">Cierre académico</span>
+      <div class="stats-band">
+        <div class="surface">
+          <span class="label">Normas citadas</span>
+          <span class="metric-value">6</span>
+        </div>
+        <div class="surface">
+          <span class="label">Enfoque</span>
+          <span class="metric-value">Marco jurídico aplicable</span>
+        </div>
+      </div>
+    </div>
+  </PageHero>
+
+  <section class="cards-grid">
+    <ContentCard
+      eyebrow="Normativa"
+      title="Listado de referencias"
+      description="Referencias presentadas en formato breve y uniforme para acompañar el desarrollo del proyecto."
+      span="wide"
+      accent="violet"
+    >
+      <ul class="reference-list">
+        <li class="reference-item">Constitución Política de Nicaragua. Artículo 27. Principio de igualdad ante la ley.</li>
+        <li class="reference-item">Constitución Política de Nicaragua. Artículo 34. Derecho al debido proceso.</li>
+        <li class="reference-item">Ley No. 779. Ley Integral contra la Violencia hacia las Mujeres.</li>
+        <li class="reference-item">Código Penal de Nicaragua. Ley 641. Disposiciones sobre lesiones, amenazas y apropiación o retención indebida.</li>
+        <li class="reference-item">Código de Familia. Ley 870. Medidas y relaciones familiares vinculadas a la protección frente a la violencia intrafamiliar.</li>
+        <li class="reference-item">Ley Orgánica del Poder Judicial. Base institucional para el acceso a la defensoría pública.</li>
+      </ul>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Marco jurídico"
+      title="Normas e instituciones citadas"
+      description="Resumen del sustento legal e institucional que acompaña la propuesta de alfabetización jurídica."
+      accent="cyan"
+    >
+      <ul class="info-list">
+        <li><strong>Igualdad ante la ley</strong> El art. 27 de la Constitución funciona como argumento principal contra protocolos excluyentes.</li>
+        <li><strong>Debido proceso</strong> El art. 34 sostiene que toda denuncia debe ser oída con garantías e imparcialidad.</li>
+        <li><strong>Rutas institucionales</strong> Defensoría Pública, bufetes populares universitarios y Ministerio Público aparecen como vías de orientación y denuncia.</li>
+      </ul>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Aplicación"
+      title="Uso de las referencias en el proyecto"
+      description="Las referencias cumplen una función argumentativa y práctica dentro del desarrollo de la propuesta."
+      accent="gold"
+    >
+      <ul class="info-list">
+        <li><strong>Fundamento constitucional</strong> Sostiene que la protección jurídica debe alcanzar a toda persona sin distinción de sexo.</li>
+        <li><strong>Protección penal y familiar</strong> Permite ubicar vías concretas frente a lesiones, amenazas, violencia patrimonial y conflictos familiares.</li>
+        <li><strong>Orientación institucional</strong> Conecta la campaña con espacios de denuncia, defensa y acompañamiento legal.</li>
+      </ul>
+    </ContentCard>
+  </section>
+</BaseLayout>

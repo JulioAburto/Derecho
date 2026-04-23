@@ -1,0 +1,100 @@
+---
+import ContentCard from "../components/ContentCard.astro";
+import PageHero from "../components/PageHero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Proyecto"
+  description="Datos de identificación y presentación institucional del proyecto."
+  active="proyecto"
+>
+  <PageHero
+    variant="section"
+    eyebrow="Sobre la iniciativa"
+    title="Proyecto e identificación"
+    description="Esta página presenta el nombre del proyecto, su contexto universitario y el propósito informativo de la propuesta orientada a la población nicaragüense."
+  >
+    <div class="stack-md">
+      <span class="pill">Presentación formal</span>
+      <ul class="quick-nav">
+        <li>
+          <a href="#identidad">
+            <span>Proyecto e institución</span>
+            <span>Contexto</span>
+          </a>
+        </li>
+        <li>
+          <a href="#proposito">
+            <span>Finalidad del sitio</span>
+            <span>Propósito</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </PageHero>
+
+  <section class="cards-grid" id="identidad">
+    <ContentCard
+      eyebrow="Proyecto"
+      title="Nombre de la iniciativa"
+      description="Nombre con el que se presenta formalmente la propuesta."
+      accent="violet"
+    >
+      <div class="content-panel">Campaña de alfabetización contra la violencia contra el hombre</div>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Enfoque"
+      title="Temas centrales del sitio"
+      description="Ejes temáticos que ordenan el enfoque académico y jurídico del proyecto."
+      accent="cyan"
+    >
+      <div class="stack-md">
+        <div class="pill-row">
+          <span class="pill">Alfabetización jurídica</span>
+          <span class="pill">Violencia intrafamiliar</span>
+          <span class="pill">Acceso a la justicia</span>
+        </div>
+        <p class="muted">
+          Estas categorías reflejan el núcleo temático del proyecto: educación jurídica, violencia
+          intrafamiliar y garantía de acceso a la justicia.
+        </p>
+      </div>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Institución"
+      title="Marco universitario"
+      description="Datos institucionales de la propuesta universitaria."
+      accent="gold"
+    >
+      <ul class="info-list">
+        <li><strong>Universidad</strong> Universidad Central de Nicaragua</li>
+        <li><strong>Sede</strong> Jinotepe</li>
+        <li><strong>Referencia académica</strong> Proyecto elaborado en el ámbito universitario de formación jurídica.</li>
+      </ul>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Finalidad"
+      title="Propósito del sitio web"
+      description="La orientación del proyecto prioriza una página informativa abierta y accesible para la población."
+      accent="violet"
+      span="wide"
+    >
+      <div class="text-stack" id="proposito">
+        <div class="content-panel">
+          El sitio web se plantea como una página informativa abierta para la población nicaragüense que
+          desea informarse sobre la problemática abordada y sobre las vulneraciones de derechos vinculadas a
+          la violencia intrafamiliar ejercida contra hombres.
+        </div>
+        <div class="content-panel">
+          Su función principal es ofrecer orientación clara, accesible y argumentada sobre el problema, las
+          barreras que enfrentan las víctimas y las rutas institucionales y jurídicas que pueden contribuir al
+          acceso a la justicia.
+        </div>
+      </div>
+    </ContentCard>
+  </section>
+</BaseLayout>

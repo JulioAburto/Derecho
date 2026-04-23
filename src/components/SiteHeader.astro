@@ -1,0 +1,148 @@
+---
+interface Props {
+  active?: string;
+}
+
+const { active = "" } = Astro.props;
+
+const links = [
+  { href: "/", label: "Inicio", key: "inicio" },
+  { href: "/proyecto", label: "Proyecto", key: "proyecto" },
+  { href: "/problematica", label: "Problemática", key: "problematica" },
+  { href: "/solucion", label: "Solución", key: "solucion" },
+  { href: "/referencias", label: "Referencias", key: "referencias" },
+];
+---
+
+<header class="site-header">
+  <div class="container nav-shell surface">
+    <a class="brand" href="/">
+      <span class="brand-mark">DI</span>
+      <span>
+        <strong>Derecho INOP</strong>
+        <small>Campaña de alfabetización jurídica</small>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegación principal">
+      {links.map((link) => (
+        <a
+          class={`nav-link ${active === link.key ? "is-active" : ""}`.trim()}
+          href={link.href}
+          aria-current={active === link.key ? "page" : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 1rem 0 0;
+  }
+
+  .nav-shell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 20px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+  }
+
+  .brand strong,
+  .brand small {
+    display: block;
+  }
+
+  .brand strong {
+    font-size: 0.98rem;
+    color: var(--accent-strong);
+  }
+
+  .brand small {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 14px;
+    border: 1px solid rgba(176, 138, 84, 0.26);
+    background: var(--accent-strong);
+    color: var(--surface-strong);
+    font-weight: 800;
+    box-shadow: 0 10px 24px rgba(18, 32, 51, 0.08);
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.55rem;
+  }
+
+  .nav-link {
+    padding: 0.72rem 0.95rem;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    color: var(--muted);
+    border: 1px solid transparent;
+    transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.is-active {
+    color: var(--accent-strong);
+    background: rgba(22, 37, 58, 0.04);
+    border-color: rgba(176, 138, 84, 0.18);
+  }
+
+  .brand:focus-visible,
+  .nav-link:focus-visible {
+    outline: none;
+  }
+
+  .brand:focus-visible {
+    border-radius: 20px;
+    box-shadow: 0 0 0 3px rgba(176, 138, 84, 0.18);
+  }
+
+  .nav-link:focus-visible {
+    color: var(--accent-strong);
+    background: rgba(22, 37, 58, 0.04);
+    border-color: rgba(176, 138, 84, 0.24);
+    box-shadow: 0 0 0 3px rgba(176, 138, 84, 0.14);
+  }
+
+  @media (max-width: 760px) {
+    .site-header {
+      position: static;
+    }
+
+    .nav-shell {
+      border-radius: 28px;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .nav-links {
+      justify-content: flex-start;
+    }
+  }
+</style>

@@ -1,0 +1,94 @@
+---
+import ContentCard from "../components/ContentCard.astro";
+import PageHero from "../components/PageHero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Problemática"
+  description="Planteamiento y análisis del problema jurídico abordado por el proyecto."
+  active="problematica"
+>
+  <PageHero
+    variant="section"
+    eyebrow="Contexto jurídico-social"
+    title="Planteamiento y análisis de la problemática"
+    description="El documento describe la violencia intrafamiliar ejercida contra hombres en Nicaragua como una realidad poco visibilizada, atravesada por barreras informativas, estigmas sociales y dudas sobre el acceso efectivo a la justicia."
+  >
+    <div class="stack-md">
+      <span class="pill">Problema jurídico</span>
+      <ul class="info-list">
+        <li><strong>Invisibilización</strong> La violencia contra el hombre suele quedar en segundo plano.</li>
+        <li><strong>Desinformación</strong> Muchos hombres desconocen sus derechos y mecanismos de denuncia.</li>
+        <li><strong>Estigma</strong> Los mandatos de masculinidad dificultan reconocer y denunciar la victimización.</li>
+      </ul>
+    </div>
+  </PageHero>
+
+  <section class="cards-grid">
+    <ContentCard
+      eyebrow="Contexto"
+      title="Planteamiento del problema"
+      description="El documento explica cómo se configura el problema en el plano social, informativo y jurídico."
+      span="wide"
+      accent="violet"
+    >
+      <div class="text-stack">
+        <div class="content-panel">
+          En la sociedad nicaragüense, la violencia intrafamiliar ha sido abordada principalmente desde una
+          perspectiva que reconoce a la mujer como la principal víctima. Sin embargo, esta visión ha dejado
+          en un segundo plano otras realidades, como la violencia ejercida contra los hombres dentro del
+          ámbito familiar, generando un vacío tanto en el conocimiento social como en la aplicación del
+          derecho.
+        </div>
+        <div class="two-up">
+          <div class="content-panel">
+            Uno de los principales problemas radica en que muchos hombres en Nicaragua no están adecuadamente
+            informados sobre sus derechos ni sobre los mecanismos legales disponibles para denunciar
+            situaciones de violencia familiar.
+          </div>
+          <div class="content-panel">
+            A ello se suma la influencia de estereotipos de género que imponen la idea de que el hombre debe
+            ser fuerte y no mostrar vulnerabilidad, lo que genera miedo al juicio público y desincentiva la
+            denuncia.
+          </div>
+        </div>
+      </div>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Análisis"
+      title="Análisis del problema y pregunta jurídica central"
+      description="El análisis jurídico del documento vincula la problemática con igualdad ante la ley, tutela judicial efectiva y barreras institucionales."
+      span="wide"
+      accent="cyan"
+    >
+      <div class="text-stack">
+        <div class="content-panel">
+          En Nicaragua, la regulación principal en materia de violencia intrafamiliar y de género se ubica en
+          la Ley No. 779. Sin embargo, desde un enfoque de igualdad ante la ley y protección integral de
+          derechos humanos, el documento identifica una insuficiente visibilización y atención institucional
+          de los hombres como posibles víctimas de violencia.
+        </div>
+        <ol class="number-flow">
+          <li><strong>¿Cuáles son las principales causas?</strong> Subregistro, machismo bidireccional, protocolos centrados exclusivamente en mujeres y falta de capacitación institucional.</li>
+          <li><strong>¿A quién afecta?</strong> A hombres víctimas de violencia intrafamiliar, psicológica, física o patrimonial dentro del contexto nicaragüense.</li>
+          <li><strong>¿Cuál es el problema jurídico central?</strong> ¿Existe una falta de mecanismos efectivos dentro del sistema jurídico nicaragüense que garanticen el acceso a la justicia para hombres víctimas de violencia intrafamiliar, en condiciones de igualdad?</li>
+        </ol>
+      </div>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Justificación"
+      title="Justificación de la investigación"
+      description="El documento fundamenta la relevancia del tema desde la visibilización, la equidad y la protección de derechos."
+      accent="gold"
+    >
+      <ul class="info-list">
+        <li><strong>Visibilización</strong> Se busca informar y concientizar sobre una forma de violencia poco reconocida social y jurídicamente.</li>
+        <li><strong>Enfoque inclusivo</strong> El trabajo propone analizar el marco legal desde una visión más equitativa del derecho.</li>
+        <li><strong>Acceso a la justicia</strong> Pretende eliminar estigmas y favorecer la protección efectiva de los derechos de las víctimas.</li>
+      </ul>
+    </ContentCard>
+  </section>
+</BaseLayout>

@@ -1,0 +1,146 @@
+---
+import ContentCard from "../components/ContentCard.astro";
+import PageHero from "../components/PageHero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Solución"
+  description="Solución propuesta, impacto, innovación y viabilidad general del proyecto."
+  active="solucion"
+>
+  <PageHero
+    variant="section"
+    eyebrow="Orientación y respuesta"
+    title="Alfabetización jurídica como solución integral"
+    description="El documento plantea que la respuesta no radica solo en cambiar la ley, sino en democratizar su conocimiento mediante campañas de sensibilización, rutas claras de asesoría legal y una mirada institucional más amplia sobre la violencia contra el hombre."
+  >
+    <div class="stack-md">
+      <span class="pill">Centro de la propuesta</span>
+      <ul class="quick-nav">
+        <li>
+          <a href="#solucion-principal">
+            <span>Solución integral</span>
+            <span>Propuesta</span>
+          </a>
+        </li>
+        <li>
+          <a href="#impacto-innovacion">
+            <span>Impacto e innovación</span>
+            <span>Efectos</span>
+          </a>
+        </li>
+        <li>
+          <a href="#viabilidad">
+            <span>Ruta de actuación</span>
+            <span>Acción</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </PageHero>
+
+  <section class="cards-grid" id="solucion-principal">
+    <ContentCard
+      eyebrow="Solución"
+      title="Descripción de la solución"
+      description="La propuesta se centra en alfabetización jurídica y sensibilización para transformar el acceso a la información y la respuesta institucional."
+      span="wide"
+      accent="violet"
+    >
+      <div class="text-stack">
+        <div class="content-panel">
+          La solución no radica solo en cambiar la ley, sino en democratizar el conocimiento de la misma.
+          El documento propone campañas que expliquen que el principio de igualdad ante la ley protege a toda
+          persona, así como acciones para romper el estigma que asocia la denuncia con una pérdida de
+          masculinidad.
+        </div>
+        <div class="two-up">
+          <div class="content-panel">
+            <strong>Eje educativo</strong><br />
+            Charlas sobre derechos fundamentales y nuevas masculinidades para explicar cómo identificar,
+            documentar y denunciar la violencia.
+          </div>
+          <div class="content-panel">
+            <strong>Eje institucional y comunicacional</strong><br />
+            Actualización de protocolos de recepción de denuncias y campaña comunicacional para combatir la
+            cifra negra y la revictimización.
+          </div>
+        </div>
+      </div>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Asesoría"
+      title="Vías de asesoría legal en Nicaragua"
+      description="El documento identifica instituciones concretas a las que podrían acudir los hombres víctimas de violencia."
+      accent="cyan"
+    >
+      <ol class="number-flow">
+        <li><strong>Defensoría Pública</strong> Según la Ley Orgánica del Poder Judicial, puede brindar defensa gratuita en casos de familia y penales a personas de escasos recursos.</li>
+        <li><strong>Bufetes Populares Universitarios</strong> Universidades como UCN, UCA o UNAN pueden orientar, bajo supervisión, sobre cómo documentar pruebas de violencia psicológica o patrimonial.</li>
+        <li><strong>Ministerio Público</strong> Se plantea como vía para interponer denuncia formal y solicitar acompañamiento fiscal.</li>
+      </ol>
+    </ContentCard>
+  </section>
+
+  <section class="cards-grid" id="impacto-innovacion">
+    <ContentCard
+      eyebrow="Impacto"
+      title="Impacto"
+      description="Efecto social y jurídico esperado de la propuesta planteada en el documento."
+      span="half"
+      accent="gold"
+    >
+      <div class="content-panel">
+        La propuesta pretende promover mayor equidad en el acceso a la justicia, reducir el silencio frente a
+        la violencia intrafamiliar, fortalecer la protección de derechos y fomentar una cultura de respeto sin
+        distinción de género.
+      </div>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Innovación"
+      title="Innovación"
+      description="Elemento diferenciador de la propuesta según el razonamiento del documento."
+      span="half"
+      accent="violet"
+    >
+      <div class="content-panel">
+        La innovación consiste en no limitar la respuesta a una reforma legal abstracta, sino en democratizar
+        el conocimiento jurídico, ampliar el enfoque de género institucional y construir rutas claras de
+        orientación para hombres víctimas de violencia.
+      </div>
+    </ContentCard>
+  </section>
+
+  <section class="cards-grid" id="viabilidad">
+    <ContentCard
+      eyebrow="Actuación"
+      title="Ruta crítica de orientación y denuncia"
+      description="El proyecto propone una secuencia clara de actuación para que la víctima reúna información, denuncie y solicite protección."
+      span="wide"
+      accent="cyan"
+    >
+      <ol class="number-flow">
+        <li><strong>Recopilación de evidencia</strong> Reunir mensajes, audios, fotografías, testigos o peritajes privados cuando corresponda.</li>
+        <li><strong>Presentación de denuncia</strong> Interponer la denuncia con base en el principio de igualdad ante la ley reconocido por la Constitución.</li>
+        <li><strong>Solicitud de protección</strong> Gestionar medidas cautelares para resguardar la integridad física o los bienes de la persona afectada.</li>
+      </ol>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Base legal"
+      title="Normas utilizadas para orientar la denuncia"
+      description="El sitio resume las referencias jurídicas que el proyecto considera útiles para comprender la protección aplicable."
+      span="wide"
+      accent="gold"
+    >
+      <ul class="info-list">
+        <li><strong>Artículo 27 de la Constitución</strong> Base del principio de igualdad ante la ley y argumento central contra prácticas excluyentes.</li>
+        <li><strong>Código Penal, Ley 641</strong> Referencia para lesiones, amenazas y violencia patrimonial en tipos penales formulados de manera neutra.</li>
+        <li><strong>Código de Familia, Ley 870</strong> Relevante para situaciones patrimoniales y para conflictos familiares que inciden en la protección de la víctima.</li>
+      </ul>
+    </ContentCard>
+  </section>
+</BaseLayout>

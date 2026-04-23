@@ -1,0 +1,133 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  variant?: "feature" | "section";
+}
+
+const {
+  eyebrow = "Sección del sitio",
+  title,
+  description,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+  variant = "feature",
+} = Astro.props;
+
+const hasAside = Astro.slots.has("default");
+
+const classes = ["page-hero", `page-hero-${variant}`];
+
+if (hasAside) classes.push("has-aside");
+---
+
+<section class={classes.join(" ")}>
+  <div class={`hero-copy surface ${variant === "feature" ? "stack-lg" : "stack-md"}`}>
+    <div class="stack-md hero-copy-content">
+      <span class="eyebrow">{eyebrow}</span>
+      <h1 class="hero-title">{title}</h1>
+      <p class="hero-description">{description}</p>
+    </div>
+
+    {(primaryLabel || secondaryLabel) && (
+      <div class="action-row">
+        {primaryLabel && primaryHref && (
+          <a class="button primary" href={primaryHref}>
+            {primaryLabel}
+          </a>
+        )}
+        {secondaryLabel && secondaryHref && (
+          <a class="button secondary" href={secondaryHref}>
+            {secondaryLabel}
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+
+  {hasAside && (
+    <aside class="hero-side surface">
+      <slot />
+    </aside>
+  )}
+</section>
+
+<style>
+  .page-hero {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .hero-copy,
+  .hero-side {
+    padding: clamp(1.3rem, 3vw, 2rem);
+  }
+
+  .hero-copy {
+    overflow: hidden;
+  }
+
+  .hero-copy-content {
+    max-width: 46rem;
+  }
+
+  .hero-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--accent-strong);
+  }
+
+  .hero-description {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.72;
+    max-width: 42rem;
+  }
+
+  .page-hero-feature .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+  }
+
+  .page-hero-feature .hero-copy::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: min(11rem, 32%);
+    height: 4px;
+    border-radius: 0 0 999px 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  }
+
+  .page-hero-section .hero-copy,
+  .page-hero-section .hero-side {
+    padding: clamp(1.15rem, 2.5vw, 1.55rem);
+  }
+
+  .page-hero-section .hero-title {
+    font-size: clamp(2rem, 4.2vw, 3rem);
+  }
+
+  .page-hero-section .hero-copy-content {
+    max-width: 50rem;
+  }
+
+  .page-hero-section .hero-side {
+    border-radius: var(--radius-sm);
+  }
+
+  @media (min-width: 760px) {
+    .page-hero-feature.has-aside {
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+    }
+  }
+</style>

@@ -1,17 +1,191 @@
 ---
-
+import ContentCard from "../components/ContentCard.astro";
+import PageHero from "../components/PageHero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Inicio"
+  description="Presentación del proyecto Campaña de alfabetización contra la violencia contra el hombre."
+  active="inicio"
+>
+  <PageHero
+    variant="feature"
+    eyebrow="Sitio informativo"
+    title="Campaña de alfabetización contra la violencia contra el hombre"
+    description="La investigación se justifica en la necesidad de visibilizar, informar y concientizar sobre la violencia ejercida contra el hombre dentro del contexto legal, promoviendo una visión más inclusiva y equitativa del derecho y favoreciendo el acceso a la justicia."
+    primaryHref="/proyecto"
+    primaryLabel="Ver datos del proyecto"
+    secondaryHref="/solucion"
+    secondaryLabel="Revisar la solución"
+  >
+    <div class="stack-md">
+      <span class="pill">Navegación principal</span>
+      <h2 class="hero-panel-title">Mapa del contenido</h2>
+      <ul class="quick-nav">
+        <li>
+          <a href="/proyecto">
+            <span>Proyecto e identificación</span>
+            <span>Contexto</span>
+          </a>
+        </li>
+        <li>
+          <a href="/problematica">
+            <span>Problemática y análisis</span>
+            <span>Análisis</span>
+          </a>
+        </li>
+        <li>
+          <a href="/solucion">
+            <span>Solución y orientación</span>
+            <span>Respuesta</span>
+          </a>
+        </li>
+        <li>
+          <a href="/referencias">
+            <span>Referencias normativas</span>
+            <span>Normas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </PageHero>
+
+  <section class="stack-lg" id="ruta">
+    <div class="section-heading">
+      <span class="eyebrow">Panorama del proyecto</span>
+      <h2>El trabajo aborda una problemática jurídica y social que suele permanecer invisibilizada.</h2>
+      <p>
+        El contenido se organiza para mostrar la identidad del proyecto, el planteamiento del problema, la
+        propuesta de alfabetización jurídica y el marco normativo que sostiene el análisis.
+      </p>
+    </div>
+
+    <div class="cards-grid">
+      <ContentCard
+        eyebrow="Identidad"
+        title="Identidad del proyecto"
+        description="Presenta el nombre de la iniciativa, su marco universitario y el enfoque general del sitio informativo."
+        accent="violet"
+      >
+        <ul class="info-list">
+          <li><strong>Nombre del proyecto</strong> Campaña de alfabetización contra la violencia contra el hombre</li>
+          <li><strong>Universidad</strong> Universidad Central de Nicaragua - Sede Jinotepe</li>
+          <li><strong>Enfoque</strong> Sitio web informativo abierto para orientar a la población sobre una problemática jurídica específica.</li>
+        </ul>
+        <a class="text-link" href="/proyecto">Abrir esta sección</a>
+      </ContentCard>
+
+      <ContentCard
+        eyebrow="Problemática"
+        title="Problema y desafío"
+        description="Expone la falta de información, el estigma social y las barreras institucionales que enfrentan los hombres víctimas de violencia familiar en Nicaragua."
+        accent="cyan"
+      >
+        <ul class="info-list">
+          <li><strong>Desinformación jurídica</strong> Muchos hombres no conocen sus derechos ni los mecanismos legales disponibles.</li>
+          <li><strong>Estigma sociocultural</strong> Los estereotipos de género desincentivan la denuncia y refuerzan el silencio.</li>
+          <li><strong>Barreras institucionales</strong> La protección legal no siempre se percibe como accesible o aplicable para ellos.</li>
+        </ul>
+        <a class="text-link" href="/problematica">Abrir esta sección</a>
+      </ContentCard>
+
+      <ContentCard
+        eyebrow="Orientación"
+        title="Solución propuesta"
+        description="La respuesta planteada se centra en alfabetización jurídica, sensibilización y orientación clara sobre las vías de denuncia y asesoría legal."
+        accent="gold"
+      >
+        <ul class="info-list">
+          <li><strong>Alfabetización jurídica</strong> Campañas y charlas sobre igualdad ante la ley y derechos fundamentales.</li>
+          <li><strong>Rutas de apoyo</strong> Defensoría Pública, bufetes populares universitarios y Ministerio Público.</li>
+          <li><strong>Ruta crítica</strong> Evidencia, denuncia formal y solicitud de medidas de protección.</li>
+        </ul>
+        <a class="text-link" href="/solucion">Abrir esta sección</a>
+      </ContentCard>
+
+      <ContentCard
+        eyebrow="Normativa"
+        title="Referencias"
+        description="Recoge el marco normativo e institucional que sustenta el análisis y la propuesta planteada."
+        accent="violet"
+      >
+        <ul class="info-list">
+          <li><strong>Constitución Política</strong> Arts. 27 y 34 sobre igualdad ante la ley y debido proceso.</li>
+          <li><strong>Código Penal y Código de Familia</strong> Ley 641 y Ley 870 como sustento de protección jurídica.</li>
+          <li><strong>Normas e instituciones</strong> Ley 779, Ley Orgánica del Poder Judicial y rutas institucionales de denuncia.</li>
+        </ul>
+        <a class="text-link" href="/referencias">Abrir esta sección</a>
+      </ContentCard>
+    </div>
+  </section>
+
+  <section class="stack-lg">
+    <div class="section-heading">
+      <span class="eyebrow">Ejes del sitio</span>
+      <h2>La web está orientada a informar, contextualizar y ofrecer rutas claras de comprensión jurídica.</h2>
+      <p>
+        La experiencia se centra en explicar la problemática, desarrollar su dimensión jurídica y mostrar de
+        forma ordenada las vías de orientación, protección y respaldo normativo.
+      </p>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill">Contexto jurídico-social</span>
+      <span class="pill">Violencia intrafamiliar</span>
+      <span class="pill">Acceso a la justicia</span>
+      <span class="pill">Igualdad ante la ley</span>
+      <span class="pill">Orientación legal</span>
+      <span class="pill">Ruta de denuncia</span>
+      <span class="pill">Marco normativo</span>
+    </div>
+  </section>
+
+  <section class="two-up">
+    <ContentCard
+      eyebrow="Justificación"
+      title="Razones que sustentan la investigación"
+      description="El documento fundamenta la pertinencia académica y social del proyecto desde la igualdad ante la ley y la protección de derechos."
+      span="half"
+      accent="cyan"
+    >
+      <div class="text-stack">
+        <p>
+          La investigación busca visibilizar, informar y concientizar sobre la violencia ejercida contra el
+          hombre dentro del contexto legal, un fenómeno que existe, pero suele ser poco reconocido tanto a
+          nivel social como jurídico.
+        </p>
+        <p>
+          El trabajo también pretende promover una visión más inclusiva y equitativa del derecho,
+          favoreciendo el acceso a la justicia y la protección de los derechos de quienes sufren violencia
+          familiar.
+        </p>
+      </div>
+    </ContentCard>
+
+    <ContentCard
+      eyebrow="Pregunta central"
+      title="Problema jurídico identificado"
+      description="El análisis del documento formula una pregunta jurídica concreta sobre igualdad y acceso a la justicia."
+      span="half"
+      accent="violet"
+    >
+      <div class="content-panel">
+        ¿Existe una falta de mecanismos efectivos dentro del sistema jurídico nicaragüense que garanticen
+        el acceso a la justicia para hombres víctimas de violencia intrafamiliar, en condiciones de igualdad?
+      </div>
+      <ol class="number-flow">
+        <li><strong>1</strong> Igualdad ante la ley como principio rector del análisis</li>
+        <li><strong>2</strong> Tutela judicial efectiva para toda persona sin distinción de género</li>
+        <li><strong>3</strong> Eliminación de barreras informativas, sociales e institucionales</li>
+      </ol>
+    </ContentCard>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-panel-title {
+    margin: 0;
+    font-size: 1.35rem;
+  }
+</style>
