@@ -3,7 +3,7 @@ interface Props {
   eyebrow?: string;
   title: string;
   description?: string;
-  span?: "normal" | "half" | "wide";
+  span?: "normal" | "half" | "wide" | "full";
   accent?: "violet" | "cyan" | "gold";
 }
 
@@ -19,6 +19,7 @@ const classes = ["content-card", "surface"];
 
 if (span === "half") classes.push("span-half");
 if (span === "wide") classes.push("span-wide");
+if (span === "full") classes.push("span-full");
 
 classes.push(`accent-${accent}`);
 ---

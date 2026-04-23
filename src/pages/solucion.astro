@@ -1,6 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import ContentCard from "../components/ContentCard.astro";
 import PageHero from "../components/PageHero.astro";
+import institutionalSupportIllustration from "../assets/images/solucion/prompt4.png";
+import routeIllustration from "../assets/images/solucion/prompt3.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -45,7 +48,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       eyebrow="Solución"
       title="Descripción de la solución"
       description="La propuesta se centra en alfabetización jurídica y sensibilización para transformar el acceso a la información y la respuesta institucional."
-      span="wide"
+      span="full"
       accent="violet"
     >
       <div class="text-stack">
@@ -74,14 +77,49 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       eyebrow="Asesoría"
       title="Vías de asesoría legal en Nicaragua"
       description="El documento identifica instituciones concretas a las que podrían acudir los hombres víctimas de violencia."
+      span="full"
       accent="cyan"
     >
-      <ol class="number-flow">
-        <li><strong>Defensoría Pública</strong> Según la Ley Orgánica del Poder Judicial, puede brindar defensa gratuita en casos de familia y penales a personas de escasos recursos.</li>
-        <li><strong>Bufetes Populares Universitarios</strong> Universidades como UCN, UCA o UNAN pueden orientar, bajo supervisión, sobre cómo documentar pruebas de violencia psicológica o patrimonial.</li>
-        <li><strong>Ministerio Público</strong> Se plantea como vía para interponer denuncia formal y solicitar acompañamiento fiscal.</li>
-      </ol>
+      <div class="two-up" style="align-items: center;">
+        <ol class="number-flow">
+          <li><strong>Defensoría Pública</strong> Según la Ley Orgánica del Poder Judicial, puede brindar defensa gratuita en casos de familia y penales a personas de escasos recursos.</li>
+          <li><strong>Bufetes Populares Universitarios</strong> Universidades como UCN, UCA o UNAN pueden orientar, bajo supervisión, sobre cómo documentar pruebas de violencia psicológica o patrimonial.</li>
+          <li><strong>Ministerio Público</strong> Se plantea como vía para interponer denuncia formal y solicitar acompañamiento fiscal.</li>
+        </ol>
+
+        <figure class="card-figure card-figure--institucional">
+          <Image
+            src={institutionalSupportIllustration}
+            alt="Ilustración editorial sobre acompañamiento institucional y orientación jurídica inicial."
+            widths={[360, 560, 760]}
+            sizes="(max-width: 759px) 100vw, (max-width: 1023px) 45vw, 28vw"
+            loading="lazy"
+          />
+        </figure>
+      </div>
     </ContentCard>
+  </section>
+
+  <section class="section-visual surface section-visual--stacked">
+    <div class="section-visual-copy">
+      <span class="eyebrow">Ruta visual</span>
+      <h2>La propuesta organiza la orientación en una secuencia clara de actuación.</h2>
+      <p>
+        La respuesta planteada no se limita a exponer normas. También busca ordenar la actuación inicial de
+        la víctima: reunir evidencia, comprender sus derechos, ubicar espacios de apoyo y activar medidas de
+        protección cuando corresponda.
+      </p>
+    </div>
+
+    <figure class="section-visual-media section-visual-media--ruta">
+      <Image
+        src={routeIllustration}
+        alt="Ilustración tipo diagrama sobre recopilación de evidencia, orientación legal, acompañamiento institucional y protección."
+        widths={[560, 800, 1120, 1440]}
+        sizes="(max-width: 759px) 100vw, (max-width: 1023px) 92vw, 52vw"
+        loading="lazy"
+      />
+    </figure>
   </section>
 
   <section class="cards-grid" id="impacto-innovacion">
@@ -119,7 +157,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       eyebrow="Actuación"
       title="Ruta crítica de orientación y denuncia"
       description="El proyecto propone una secuencia clara de actuación para que la víctima reúna información, denuncie y solicite protección."
-      span="wide"
+      span="full"
       accent="cyan"
     >
       <ol class="number-flow">
@@ -133,7 +171,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       eyebrow="Base legal"
       title="Normas utilizadas para orientar la denuncia"
       description="El sitio resume las referencias jurídicas que el proyecto considera útiles para comprender la protección aplicable."
-      span="wide"
+      span="full"
       accent="gold"
     >
       <ul class="info-list">
@@ -144,3 +182,51 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </ContentCard>
   </section>
 </BaseLayout>
+
+<style>
+  .section-visual-media--ruta {
+    aspect-ratio: auto;
+    background: transparent;
+    border: none;
+  }
+
+  .section-visual-media--ruta :global(img) {
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .card-figure--institucional {
+    aspect-ratio: auto;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .card-figure--institucional :global(img) {
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 12px;
+  }
+
+  @media (min-width: 1024px) {
+    .section-visual--stacked {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    
+    .section-visual--stacked .section-visual-copy {
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    .section-visual--stacked .section-visual-media {
+      width: 100%;
+    }
+  }
+</style>

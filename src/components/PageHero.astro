@@ -31,35 +31,37 @@ if (hasAside) classes.push("has-aside");
 ---
 
 <section class={classes.join(" ")}>
-  <div class={`hero-copy surface ${variant === "feature" ? "stack-lg" : "stack-md"}`}>
+  <div class={`hero-copy surface ${variant === "feature" ? "stack-md" : "stack-md"}`}>
     <div class="stack-md hero-copy-content">
       <span class="eyebrow">{eyebrow}</span>
       <h1 class="hero-title">{title}</h1>
       <p class="hero-description">{description}</p>
     </div>
 
-    {(primaryLabel || secondaryLabel) && (
-      <div class="action-row">
-        {primaryLabel && primaryHref && (
-          <a class="button primary" href={primaryHref}>
-            {primaryLabel}
-          </a>
-        )}
-        {secondaryLabel && secondaryHref && (
-          <a class="button secondary" href={secondaryHref}>
-            {secondaryLabel}
-          </a>
-        )}
-      </div>
-    )}
+    <div class="stack-sm">
+      {(primaryLabel || secondaryLabel) && (
+        <div class="action-row">
+          {primaryLabel && primaryHref && (
+            <a class="button primary" href={primaryHref}>
+              {primaryLabel}
+            </a>
+          )}
+          {secondaryLabel && secondaryHref && (
+            <a class="button secondary" href={secondaryHref}>
+              {secondaryLabel}
+            </a>
+          )}
+        </div>
+      )}
 
-    {highlights.length > 0 && (
-      <div class="hero-highlights" aria-label="Aspectos destacados">
-        {highlights.map((item) => (
-          <span class="hero-highlight">{item}</span>
-        ))}
-      </div>
-    )}
+      {highlights.length > 0 && (
+        <div class="hero-highlights" aria-label="Aspectos destacados">
+          {highlights.map((item) => (
+            <span class="hero-highlight">{item}</span>
+          ))}
+        </div>
+      )}
+    </div>
   </div>
 
   {hasAside && (
@@ -140,19 +142,25 @@ if (hasAside) classes.push("has-aside");
     display: flex;
     flex-wrap: wrap;
     gap: 0.7rem;
+    align-items: flex-start;
   }
 
   .hero-highlight {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.4rem;
-    padding: 0.5rem 0.8rem;
+    height: 36px;
+    max-height: 36px;
+    padding: 0 1.1rem;
     border-radius: 999px;
     border: 1px solid rgba(22, 37, 58, 0.12);
     background: rgba(22, 37, 58, 0.03);
     color: var(--accent-strong);
     font-size: 0.9rem;
     font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
   }
 
   .hero-highlight::before {

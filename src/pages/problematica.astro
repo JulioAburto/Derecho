@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import ContentCard from "../components/ContentCard.astro";
 import PageHero from "../components/PageHero.astro";
+import problematicaIllustration from "../assets/images/problematica/prompt2.png";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -24,6 +26,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </ul>
     </div>
   </PageHero>
+
+  <section class="section-visual surface is-media-left">
+    <div class="section-visual-copy">
+      <span class="eyebrow">Lectura visual</span>
+      <h2>Las barreras no son solo legales: también son sociales, informativas e institucionales.</h2>
+      <p>
+        La problemática se sostiene en el silencio, la falta de información jurídica, el estigma asociado a
+        la vulnerabilidad masculina y una percepción institucional que no siempre reconoce a los hombres como
+        posibles víctimas de violencia intrafamiliar.
+      </p>
+    </div>
+
+    <figure class="section-visual-media section-visual-media--problematica">
+      <Image
+        src={problematicaIllustration}
+        alt="Ilustración editorial sobre barreras sociales, desinformación jurídica y obstáculos institucionales en el acceso a la justicia."
+        widths={[560, 800, 1120, 1440]}
+        sizes="(max-width: 759px) 100vw, (max-width: 1023px) 92vw, 52vw"
+        loading="lazy"
+      />
+    </figure>
+  </section>
 
   <section class="cards-grid">
     <ContentCard
@@ -92,3 +116,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </ContentCard>
   </section>
 </BaseLayout>
+
+<style>
+  .section-visual-media--problematica :global(img) {
+    object-position: center 48%;
+  }
+</style>
