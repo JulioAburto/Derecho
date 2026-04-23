@@ -54,7 +54,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       eyebrow="Contexto"
       title="Planteamiento del problema"
       description="El documento explica cómo se configura el problema en el plano social, informativo y jurídico."
-      span="wide"
+      span="full"
       accent="violet"
     >
       <div class="text-stack">
@@ -84,7 +84,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       eyebrow="Análisis"
       title="Análisis del problema y pregunta jurídica central"
       description="El análisis jurídico del documento vincula la problemática con igualdad ante la ley, tutela judicial efectiva y barreras institucionales."
-      span="wide"
+      span="full"
       accent="cyan"
     >
       <div class="text-stack">
@@ -106,6 +106,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       eyebrow="Justificación"
       title="Justificación de la investigación"
       description="El documento fundamenta la relevancia del tema desde la visibilización, la equidad y la protección de derechos."
+      span="full"
       accent="gold"
     >
       <ul class="info-list">
@@ -118,7 +119,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
+  .section-visual-media--problematica {
+    aspect-ratio: auto;
+    background: transparent;
+    border: none;
+  }
+
   .section-visual-media--problematica :global(img) {
-    object-position: center 48%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 </style>
